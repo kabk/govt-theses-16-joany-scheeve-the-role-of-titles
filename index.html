@@ -1,0 +1,230 @@
+<!doctype html>
+
+ <!-- header ( niet aan zitten!) -->
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>what about have a litle title</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div class="wrapper">
+    
+  <div class="row">
+    
+    <div class="large-12 columns">
+
+      <div class="spacer">
+
+      <!-- titel opsomming links -->
+     
+
+      </div>
+       <!-- plaatjes (figure tot /figure Kunnen plaatjes aan zijkant) -->
+      
+
+    <div class="large-9 medium-9 columns">
+
+
+      <!-- Artikel 1 -->
+      <div class="row">
+          
+        <div class="large-8 medium-8 columns">
+
+          <br>
+            <h1 id="1"><a href="index1.html">de</a></h1>
+
+        </div>
+
+        
+        <!-- bronnen atrikel 1 --> 
+
+        <div class="large-4 columns">
+          
+          <section class="source">
+
+          </section>
+
+        </div>
+
+
+      </div>
+      <!-- Einde artikel 1 --> 
+      
+      <!-- Artikel 2 -->
+      <div class="row">
+
+        <div class="large-8 columns">
+
+            <br>
+                        
+            <h1 id="2"><a href="index1.html">werking van</a></h1>
+
+        </div>
+
+        <div class="large-8 columns">
+
+          
+        </div>
+
+
+        <div class="large-4 columns">
+          
+          <section class="source">
+          
+
+          
+
+           
+
+
+          </section>
+
+        </div>
+
+
+
+      </div>
+      <!-- Einde artikel 2 --> 
+
+      <!-- Artikel 3 -->
+      <div class="row">
+
+        <div class="large-8 columns">
+
+            <br>
+            <h1 id="3"><a href="index1.html">titels</a></h1>
+
+
+
+        </div>
+
+        <div class="large-12 columns">
+
+          
+
+
+
+        </div>
+
+
+        <div class="large-12 columns">
+          
+          <section class="source">
+           <p> <a href="index1.html">...</a> </p>
+
+      
+
+          </section>
+
+        </div>
+
+
+
+      </div>
+      <!-- Einde artikel 2 --> 
+
+
+
+
+
+
+
+
+    </div>
+    
+  </div>
+
+</div>
+<!-- niet aanzitten --> 
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/what-input/what-input.js"></script>
+<script src="bower_components/foundation-sites/dist/foundation.js"></script>
+<script src="js/app.js"></script>
+<script src="js/smooth-scroll.js"></script>
+<script> 
+
+// Smooth scroll aanroepen
+smoothScroll.init();
+
+// Hoogte menu op 0 zetten
+var currentHeight = 0;
+
+$(window).load(function() {
+
+  // Hooge menu berekenen 
+  currentHeight = $('nav').outerHeight();
+
+  // Hoogte menu toewijzen aan spacer
+  $('.spacer').css({'position':'relative', 'height': currentHeight});
+
+});
+
+// in dit object enerzijds alle ‘ids’, anderzijds de titels
+var titles = {
+    '1' : ["de", "het","een", " naar ", "wanneer","werking titel","gebruiken",",","soms"],
+    '2' : ["werking van", "gebruik van","functie van","geen titel","?","geen","betiteling van","woorden",","],
+    '3' : ["titels", "Untitled","benoemen","ontstaan","niks","tonen","indiceren","verwoorden","?"],
+  
+}
+
+var timesClicked = 0;
+
+$('h1').on('click', function(e) {
+    timesClicked = timesClicked + 1; // dit kun je ook schrijven als: timesClicked += 1
+
+    if (timesClicked < 4) {
+        e.preventDefault();
+        //document.location.href = "index.html";
+        //return;
+    }
+    // wordt getriggerd wanneer we op een h1 klikken
+    // met $(this) krijgen we het jQuery element
+    // van waar op geklikt is
+    // waar we vervolgens de jQuery methodes op
+    // toe kunnen passen
+    
+    // met $(this).attr('id') vinden we het id
+    // attribuut bv ‘dit-is-een-id’
+    var id = $(this).attr('id');
+    
+    
+    // vanuit het titles object zoeken we de array op
+    // die hoort bij deze id
+    var to_cycle = titles[id];
+
+    // Dit is de tekst van de h1 zoals die nu is
+    var currentText = $(this).find("a").text();
+    // check waar 
+    // hoe ver zijn we in de array
+    var position = to_cycle.indexOf(currentText);
+    // als we bij het laatste element zijn
+    if (position === to_cycle.length - 1) {
+        // gaan we terug naar het begin
+        position = 0;
+    } else {
+        // en anders gaan we eentje verder
+        position += 1;
+    }
+    // zet de nieuwe tekst
+    $(this).find("a").text(to_cycle[position]);
+}
+
+
+
+
+);
+</script>
+
+
+
+
+
+
+</body>
+</html>
