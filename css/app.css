@@ -42,7 +42,6 @@ header,
 hgroup,
 main,
 menu,
-nav,
 section,
 summary {
   display: block; }
@@ -726,6 +725,8 @@ button {
   margin-right: 0; }
 
 @media screen and (min-width: 40em) {
+ 
+
   .medium-1 {
     width: 8.33333%; }
   .medium-push-1 {
@@ -929,7 +930,17 @@ button {
     margin-left: 0;
     margin-right: 0; } }
 
+@media screen and (max-width: 635px) {
+ nav{display:none;
+    }
+
+  body{
+    margin:10px;
+  }  
+}
 @media screen and (min-width: 64em) {
+   
+  
   .large-1 {
     width: 8.33333%; }
   .large-push-1 {

@@ -33,8 +33,7 @@ h1:hover {
     margin-bottom: 30px;
     line-height: 17pt;
     letter-spacing:0px;
-    font-size:15px;
-  
+    font-size:15px; 
 }
 
 #citaat{ 
@@ -44,6 +43,18 @@ h1:hover {
     line-height: 17pt;
     letter-spacing:0px;
     font-size:15px;
+  
+}
+
+
+
+
+#op{ 
+    text-align:left;
+    margin-left: 20px;
+    line-height: 17pt;
+    letter-spacing:0px;
+    font-size:13px;
   
 }
 
@@ -92,7 +103,13 @@ figure{
     margin-right:auto; 
 	margin-left: auto;
  float: left;
+ font-size: 10px;
+
+
 }
+
+
+
 
 /* Sectie */
 section{
@@ -147,4 +164,44 @@ p.caption{
     font-style: italic;
     font-size: 12px;
     border-image-slice: 12px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media print{
+
+    body{
+        margin: 20px;
+    }
+
+    nav{display: none}
+
+    article{
+        width: 80%;
+        page-break-after: auto;
+        float: left;
+    }
+
+    h1{
+        text-align: left;
+        width: 80%;
+    }
+
 }
